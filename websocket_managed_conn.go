@@ -50,7 +50,7 @@ func (rtm *RTM) ManageConnection() {
 		go rtm.handleIncomingEvents(keepRunning)
 
 		// this should be a blocking call until the connection has ended
-		rtm.handleEvents(keepRunning, 30*time.Second)
+		rtm.handleEvents(keepRunning, 5*time.Second)
 
 		// after being disconnected we need to check if it was intentional
 		// if not then we should try to reconnect
